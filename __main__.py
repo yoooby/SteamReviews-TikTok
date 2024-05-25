@@ -7,6 +7,14 @@ from pathlib import Path
 def main():
     # Fetching posts from r/AskReddit
 
+
+    Path("backgrounds/").mkdir(exist_ok=True)
+    Path("render/").mkdir(exist_ok=True)
+    
+    if len(os.listdir("backgrounds")) == 0:
+        raise Exception("Please move a background video to backgrounds/ folder")
+
+
     appid = input("Please Enter AppId: ")
     print(f"⏱ Processing post: {appid}")
 
@@ -14,10 +22,11 @@ def main():
     if appid in os.listdir('render'):
         print("❌ Post already processed!")
 
+
+
     # setup 
     folder_path = f"./assets/{appid}"
     Path(folder_path).mkdir(parents=True, exist_ok=True)
-    Path("./assets/").mkdir(parents=True, exist_ok=True)
 
     # getting cover and game name
     print("Fetching game name and downloading cover")

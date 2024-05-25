@@ -30,7 +30,7 @@ def download_funny_steam_reviews(app_id):
     
     with sync_playwright() as p:
         print("Launching Headless Browser")
-        browser = p.chromium.launch(headless=True)  # Set to False to see the browser
+        browser = p.chromium.launch(headless=False)  # Set to False to see the browser
         page = browser.new_page()
         page.set_viewport_size({"width": 1280, "height": 800})
 
@@ -38,10 +38,9 @@ def download_funny_steam_reviews(app_id):
         #page.wait_for_load_state('networkidle')
 
         # Handle age verification if necessary
-        if page.locator('#agecheck_form').is_visible():
+        if page.locator('#ageYear').is_visible():
             page.select_option('#ageYear', '1990')
             page.click('text="View Page"')
-            page.wait_for_load_state('networkidle')
 
 
 
