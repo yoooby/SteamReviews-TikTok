@@ -1,8 +1,5 @@
-import asyncio
-import imp
 import json
 import os
-
 import requests
 import voice, video, steam_reviews
 from pathlib import Path
@@ -10,7 +7,7 @@ from pathlib import Path
 def main():
     # Fetching posts from r/AskReddit
 
-    appid = "393380"
+    appid = input("Please Enter AppId: ")
     print(f"⏱ Processing post: {appid}")
 
     # Make sure we have not already rendered/uploaded post
