@@ -1,0 +1,8 @@
+elevenlabs
+mutagen
+edge-tts
+PyYAML
+moviepy
+Pillow
+playwright
+opencv-python

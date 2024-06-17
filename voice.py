@@ -12,7 +12,7 @@ import yaml
 config = yaml.safe_load(open('config.yaml').read())
 
 if not config["elevenlabs_api"]:
-    raise Exception('Missing ElevenLabs API KEY')
+    raise Exception('Missing ElevenLabs API KEY Please add it in the config file')
 
 
 
