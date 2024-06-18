@@ -2,6 +2,8 @@
 
 An automatic video bot to scrape funny Steam Reviews and render videos with MoviePY. More features will be added eventually.
 
+[Example](https://streamable.com/rqu38z)
+
 If you encounter any bugs, please report them.
 
 
