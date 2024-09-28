@@ -44,10 +44,9 @@ def download_funny_steam_reviews(app_id):
 
 
 
-        display_as_dropdown = page.locator('#review_context')  # Select the dropdown by its ID
-        display_as_dropdown.scroll_into_view_if_needed()
-        page.evaluate('''document.querySelector('#review_context').value = 'funny';''')
-        page.evaluate('''document.querySelector('#review_context').dispatchEvent(new Event('change'));''')
+        page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
+        page.evaluate('document.querySelector("#review_context_funny").click();')
+        page.evaluate('ShowFilteredReviews()')
         time.sleep(5)
         page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
         # display_as_dropdown.click()
